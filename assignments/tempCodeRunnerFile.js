@@ -1,22 +1,16 @@
-// ==== Challenge 1: Write your own closure ====
-// Write a simple closure of your own creation.  Keep it simple!
-function captain() {
-  console.log(`I am the captain!`);
-  const order = "Prepare to get underway!";
+const stuff = ['pen', 'notes', 'string', 'mint'];
 
-  function xo() {
-    const xoReply = "I am the XO!"
-    console.log(`${xoReply} And I will pass on the order: ${order}`)
-
-    function crew() {
-      const crewReply = "We are the Crew!"
-      console.log(`${crewReply} And we have received the order: ${order}`)
+function contains(item, list, cb) {
+  // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.
+  for (let i = 0; i < list.length; i++) {
+    if (list[i] === item) {
+      return cb('true');
+    } else {
+      return cb('false');
     }
-
-    crew();
   }
-
-  xo();
 }
-
-captain();
+contains('pen', stuff, function(find) {
+  console.log(find)
+});
