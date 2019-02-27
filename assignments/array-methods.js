@@ -54,7 +54,6 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 
-
 // ==== Challenge 1: Use .forEach() ====
 // The event director needs both the first and last names of each runner for their running bibs.  Combine both the first and last names into a new array called fullName. 
 let fullName = [];
@@ -88,7 +87,23 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//We want to know how much each company donated.
+let companyDonations = [];
+runners.forEach(function(currentValue){
+    fullName.push(`${currentValue.company_name} ${currentValue.donation}`);
+});
+console.log(companyDonations)
 
 // Problem 2
+// Whoops. turns out shirt sizes needed to be lower case!
+let shirtLower = runners.map(function(currentValue){
+    return currentValue.first_name.toLowerCase();
+});
+console.log(shirtLower);
 
 // Problem 3
+//Guess theres no extra sized shirts left! Find out who all orderd them so we can let them know!
+let extraShirts = runners.filter(function(currentValue){
+    return currentValue.shirt_size = "X";
+});
+console.log(extraShirts);
