@@ -72,7 +72,7 @@ function contains(item, list, cb) {
     }
   }
 }
-contains('pen', stuff, function(find) {
+contains('legoLand', stuff, function(find) {
   console.log(find)
 });
 
