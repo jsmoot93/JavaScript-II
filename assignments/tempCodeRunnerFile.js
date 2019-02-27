@@ -54,6 +54,6 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 {"id":50,"first_name":"Shell","last_name":"Baine","email":"sbaine1d@intel.com","shirt_size":"M","company_name":"Gabtype","donation":171}];
 
 let largeShirts = runners.filter(function(currentValue){
-    return currentValue.shirt_size = 'L';
+    return currentValue.shirt_size === "L";
 });
 console.log(largeShirts);
